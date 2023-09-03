@@ -1,12 +1,29 @@
 /*----------------------------------------------Quadratic equation-----------------------------------------------------------------*/
 
-
-  
+function quadraticEquation() {
+    let a = prompt('Введіть '); 
+    let b = prompt('Введіть '); 
+    let c = prompt('Введіть '); 
+     
+    let discriminant = b * b - 4 * a * c;
+    
+    if (discriminant > 0) {
+       let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+       let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+       alert("x1 = " + x1);
+       alert("x2 = " + x2);
+    }
+    else { 
+       let x = -b / (2 * a);
+       alert("x = " + x);
+    }   
+  }
+  quadraticEquation();
   
   /*-----------------------------------------Factorial---------------------------------------------------------------------*/
   
   function factorial() {
-    let n = parseInt(prompt('Введіть число'));
+    let n = parseInt(prompt('Введіть'));
     let result = 1;
   
     if (n < 0) {
@@ -20,7 +37,7 @@
         alert(`факторіал числа  ${n} = ${result}`);
     }
   }
-
+  factorial();
   
   /*------------------------------------------------Fibonacci---------------------------------------------------------------*/
   
