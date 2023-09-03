@@ -1,23 +1,6 @@
 /*----------------------------------------------Quadratic equation-----------------------------------------------------------------*/
 
-function quadraticEquation() {
-    let a = prompt('Введіть a'); 
-    let b = prompt('Введіть b'); 
-    let c = prompt('Введіть c'); 
-     
-    let discriminant = b * b - 4 * a * c;
-    
-    if (discriminant > 0) {
-       let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-       let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-       alert("x1 = " + x1);
-       alert("x2 = " + x2);
-    }
-    else { 
-       let x = -b / (2 * a);
-       alert("x = " + x);
-    }   
-  }
+
   
   
   /*-----------------------------------------Factorial---------------------------------------------------------------------*/
