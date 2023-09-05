@@ -65,9 +65,66 @@ function quadraticEquation() {
   
   Fibonacci();
 
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------Reverse str---------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+  function reverseStr(inputString) {
+    return inputString.split('').reverse().join('');
+  }
+  
+
+  let originalStr = prompt('Введіть текст');
+  let reversedStr = reverseStr(originalStr);
+  
+  alert(reversedStr);  
 
 
+ /*------------------------------------------------Count words---------------------------------------------------------------*/
+
+ function countWords() {
+    let userInput= prompt('Введіть речення:');
+    
+  
+    let words = userInput.split(/\s+/).filter(word => word.length > 0);
+    let wordCount = words.length;
+    
+    alert(`Кількість слів в реченні: ${wordCount}`);
+  }
+  
+  countWords();
 
 
+/*------------------------------------------------Max length---------------------------------------------------------------*/
+
+function truncateString(inputText, maxLen) {
+    if (inputText.length > maxLen) {
+      return inputText.slice(0, maxLen) + '...';
+    }
+    return inputText;
+  }
+  
+  let userSentence = prompt('Введіть речення:');
+  let maxLength = 10;
+
+  let truncatedSentence = truncateString(userSentence, maxLength);
+  alert(truncatedSentence);
 
 
+/*------------------------------------------------Palindrome---------------------------------------------------------------*/
+
+function palindrome(word) {
+    word = word.replace(/\s/g, '').toLowerCase();
+    
+    let reversedWord = word.split('').reverse().join('');
+    
+    return word === reversedWord;
+  }
+  
+  let inputWord = prompt('Введіть слово для перевірки');
+  
+  if (palindrome(inputWord)) {
+    alert('true');
+  } else {
+    alert('false');
+  }
