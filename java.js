@@ -65,9 +65,70 @@ function quadraticEquation() {
   
   Fibonacci();
 
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------Reverse str---------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+function reverseStr(inputString) {
+    let reversed = '';
+    for (let i = inputString.length - 1; i >= 0; i--) {
+      reversed += inputString[i];
+    }
+    return reversed;
+  }
+  
+  const originalStr = prompt('Введіть текст');
+  let reversedStr = reverseStr(originalStr);
+  
+  alert(reversedStr);
 
 
+ /*------------------------------------------------Count words---------------------------------------------------------------*/
+
+ function countWords() {
+    const userInput= prompt('Введіть речення:');
+    
+  
+    let words = userInput.split(/\s+/).filter(word => word.length > 0);
+    let wordCount = words.length;
+    
+    alert(`Кількість слів в реченні: ${wordCount}`);
+  }
+  
+  countWords();
 
 
+/*------------------------------------------------Max length---------------------------------------------------------------*/
+
+function truncateString(inputText, maxLen) {
+    let truncatedText = inputText;
+    if (inputText.length > maxLen) {
+      truncatedText = inputText.slice(0, maxLen) + '...';
+    }
+    return truncatedText;
+  }
+  
+  let userSentence = prompt('Введіть речення:');
+  let maxLength = 10;
+  
+  let truncatedSentence = truncateString(userSentence, maxLength);
+  alert(truncatedSentence);
 
 
+/*------------------------------------------------Palindrome---------------------------------------------------------------*/
+
+function palindrome(word) {
+    word = word.replace(/\s/g, '').toLowerCase();
+    
+    let reversedWord = word.split('').reverse().join('');
+    
+    return word === reversedWord;
+  }
+  
+  let inputWord = prompt('Введіть слово для перевірки');
+  
+  if (palindrome(inputWord)) {
+    alert('true');
+  } else {
+    alert('false');
+  }
