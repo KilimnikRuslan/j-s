@@ -69,21 +69,24 @@ function quadraticEquation() {
 /*------------------------------------------------Reverse str---------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
-  function reverseStr(inputString) {
-    return inputString.split('').reverse().join('');
+function reverseStr(inputString) {
+    let reversed = '';
+    for (let i = inputString.length - 1; i >= 0; i--) {
+      reversed += inputString[i];
+    }
+    return reversed;
   }
   
-
-  let originalStr = prompt('Введіть текст');
+  const originalStr = prompt('Введіть текст');
   let reversedStr = reverseStr(originalStr);
   
-  alert(reversedStr);  
+  alert(reversedStr);
 
 
  /*------------------------------------------------Count words---------------------------------------------------------------*/
 
  function countWords() {
-    let userInput= prompt('Введіть речення:');
+    const userInput= prompt('Введіть речення:');
     
   
     let words = userInput.split(/\s+/).filter(word => word.length > 0);
@@ -98,15 +101,16 @@ function quadraticEquation() {
 /*------------------------------------------------Max length---------------------------------------------------------------*/
 
 function truncateString(inputText, maxLen) {
+    let truncatedText = inputText;
     if (inputText.length > maxLen) {
-      return inputText.slice(0, maxLen) + '...';
+      truncatedText = inputText.slice(0, maxLen) + '...';
     }
-    return inputText;
+    return truncatedText;
   }
   
   let userSentence = prompt('Введіть речення:');
   let maxLength = 10;
-
+  
   let truncatedSentence = truncateString(userSentence, maxLength);
   alert(truncatedSentence);
 
