@@ -23,8 +23,8 @@ const sortByLength = (arr) => {
   return arr.sort((a, b) => a.length - b.length);
 };
 
-let strings = ["22", "23456", "2222", "333", "2", "234567777", "3456723456"];
-let sortedStrings = sortByLength(strings);
+const strings = ["22", "23456", "2222", "333", "2", "234567777", "3456723456"];
+const sortedStrings = sortByLength(strings);
 
 alert(sortedStrings);
 
