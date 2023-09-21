@@ -1,62 +1,30 @@
 
 // ------------------------------------------Create arr method-------------------------------------------------
-const createArr = (obj) => {
-  const start = obj.from;
-  const end = obj.to;
-  const arr = [];
-  for (let i = start; i <= end; i++) {
-    arr.push(i);
-  }
-  return arr;
-};
 
 const obj = {
   from: 1,
   to: 10,
 };
 
-obj.arr = createArr(obj);
-
-console.log(obj.arr);
-
-
-//---------------------2---------------------
-
-const createArr = ({ from, to }) => {
+function createArr() {
   const arr = [];
-  for (let i = from; i <= to; i++) {
+
+  for (let i = this.from; i < this.to; i++) {
     arr.push(i);
   }
-  return arr;
-};
 
-const obj = {
-  from: 1,
-  to: 10,
-};
+  this.arr = arr;
+}
 
-obj.arr = createArr(obj);
+obj.createArr = createArr;
+obj.createArr();
 
-console.log(obj.arr);
+const createArrBind = createArr.bind(obj);
+createArrBind();
 
-// ----------------------3---------------------
+createArr.apply(obj);
 
-const createArr = (start, end) => {
-  const arr = [];
-  for (let i = start; i <= end; i++) {
-    arr.push(i);
-  }
-  return arr;
-};
-
-const obj = {
-  from: 1,
-  to: 10,
-};
-
-obj.arr = createArr(obj.from, obj.to);
-
-console.log(obj.arr);
+console.log(obj);
 
 
 // --------------------------------------------------------Calculator-----------------------------------------------
