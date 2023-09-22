@@ -61,3 +61,33 @@ const list = {
 };
 
 printTitles(list);
+
+//--------------------------------------------Recursion-------------------------------------------------
+
+const printTitles = (list) => {
+  if (list === null) {
+    return;
+  }
+
+  console.log(list.title);
+  printTitles(list.next); 
+};
+
+const list = {
+  title: "Lesson-1",
+  next: {
+    title: "lesson-2",
+    next: {
+      title: "lesson-3",
+      next: {
+        title: "lesson-4",
+        next: {
+          title: "lesson-5",
+          next: null,
+        },
+      },
+    },
+  },
+};
+
+printTitles(list);
