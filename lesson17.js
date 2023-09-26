@@ -8,55 +8,49 @@ const university = {
 const faculty = Object.create(university);
 faculty.facultyName = "Computer Science";
 faculty.groups = [[]]; 
-let currentGroupIndex = 0;
 
 faculty.enlistStudent = function(studentName) {
-  
-  const currentGroup = this.groups[currentGroupIndex];
+  const currentGroup = this.groups[this.groups.length - 1];
 
   if (currentGroup.length < 12) {
     currentGroup.push(studentName);
   } else {
-    
     this.groups.push([studentName]);
-    currentGroupIndex++;
   }
 };
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
-faculty.enlistStudent("Taras");
-faculty.enlistStudent("Igor");
-faculty.enlistStudent("Julia");
 
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
 
 console.log(faculty.universityName); 
-
 
 faculty.groups.forEach((group, index) => {
   console.log(`Група ${index + 1}: ${group}`);
