@@ -6,23 +6,59 @@ const university = {
 };
 
 const faculty = Object.create(university);
-faculty.facultyName = "Computer Science"; 
-faculty.groups = [];
-
+faculty.facultyName = "Computer Science";
+faculty.groups = [[]]; // Починаємо з однієї порожньої групи
+let currentGroupIndex = 0;
 
 faculty.enlistStudent = function(studentName) {
-  if (this.groups.length < 12) {
-    this.groups.push(studentName);
-    return true;
+  // Отримуємо поточну групу
+  const currentGroup = this.groups[currentGroupIndex];
+
+  if (currentGroup.length < 12) {
+    currentGroup.push(studentName);
   } else {
-    return false;
+    // Якщо поточна група вже має 12 студентів, створюємо нову групу
+    this.groups.push([studentName]);
+    currentGroupIndex++;
   }
 };
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
+faculty.enlistStudent("Taras");
+faculty.enlistStudent("Igor");
+faculty.enlistStudent("Julia");
 
-console.log(faculty.universityName); 
 
-faculty.enlistStudent("ivan");
-console.log(faculty.groups);
+console.log(faculty.universityName); // Виведе "Polytechnic"
+
+// Виводимо всі групи
+faculty.groups.forEach((group, index) => {
+  console.log(`Група ${index + 1}: ${group}`);
+});
 
 // ---------------------------------------------------------Prototype constructor--------------------------------------
 
