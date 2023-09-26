@@ -7,17 +7,17 @@ const university = {
 
 const faculty = Object.create(university);
 faculty.facultyName = "Computer Science";
-faculty.groups = [[]]; // Починаємо з однієї порожньої групи
+faculty.groups = [[]]; 
 let currentGroupIndex = 0;
 
 faculty.enlistStudent = function(studentName) {
-  // Отримуємо поточну групу
+  
   const currentGroup = this.groups[currentGroupIndex];
 
   if (currentGroup.length < 12) {
     currentGroup.push(studentName);
   } else {
-    // Якщо поточна група вже має 12 студентів, створюємо нову групу
+    
     this.groups.push([studentName]);
     currentGroupIndex++;
   }
@@ -53,9 +53,9 @@ faculty.enlistStudent("Igor");
 faculty.enlistStudent("Julia");
 
 
-console.log(faculty.universityName); // Виведе "Polytechnic"
+console.log(faculty.universityName); 
 
-// Виводимо всі групи
+
 faculty.groups.forEach((group, index) => {
   console.log(`Група ${index + 1}: ${group}`);
 });
