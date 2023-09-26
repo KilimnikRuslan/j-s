@@ -1,47 +1,28 @@
 // -----------------------------------------Prototype inheritance-------------------------------------------------
 
-const deanPrototype = {
-  university: "Назва університету",
+const university = {
+  universityName: "Polytechnic",
+  dean: "Ivan Petrov",
 };
 
+const faculty = Object.create(university);
+faculty.facultyName = "Computer Science"; 
+faculty.groups = [];
 
-const groupPrototype = {
-  name: "",
-  dean: Object.create(deanPrototype), 
-  students: [],
-  enlistStudent(studentName) {
-    if (this.students.length < 12) {
-      this.students.push(studentName);
-      console.log(`${studentName} був зарахований(на) до групи ${this.name}`);
-    } else {
-      console.log(`Група ${this.name} вже має максимальну кількість студентів (12).`);
-    }
-  },
+
+faculty.enlistStudent = function(studentName) {
+  if (this.groups.length < 12) {
+    this.groups.push(studentName);
+    return true;
+  } else {
+    return false;
+  }
 };
 
-const faculty = Object.create(groupPrototype);
-faculty.name = "Фізико-математичний факультет";
+console.log(faculty.universityName); 
 
-faculty.dean.name = "Федоров  Роман Сергійович";
-
-const groupA = Object.create(groupPrototype);
-groupA.name = "Група 242";
-groupA.enlistStudent("Іван");
-groupA.enlistStudent("Петро")
-groupA.enlistStudent("Михайло");
-groupA.enlistStudent("Олександр");
-groupA.enlistStudent("Андрій");
-groupA.enlistStudent("Олена");
-groupA.enlistStudent("Ірина");
-groupA.enlistStudent("Віктор");
-groupA.enlistStudent("Оксана");
-groupA.enlistStudent("Василь");
-groupA.enlistStudent("Наталія");
-groupA.enlistStudent("Ігор"); 
-
-console.log(`Факультет: ${faculty.name}`);
-console.log(`Декан факультету: ${faculty.dean.name}`);
-console.log(`Список студентів у групі ${groupA.name}: ${groupA.students.join(", ")}`);
+faculty.enlistStudent("ivan");
+console.log(faculty.groups);
 
 // ---------------------------------------------------------Prototype constructor--------------------------------------
 
