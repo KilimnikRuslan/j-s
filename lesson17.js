@@ -1,9 +1,10 @@
 // ----------------------------------------------------------Delayed loop-------------------------------------------------
 
-const delayedLoop = async () => {
+const delayedLoop = () => {
   for (let i = 1; i <= 5; i++) {
-    console.log(i);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); 
+    setTimeout(() => {
+      console.log(i);
+    }, i * 1000); 
   }
 };
 
