@@ -1,21 +1,14 @@
 // ----------------------------------------------------------Delayed loop-------------------------------------------------
 
-const printNumbers = () => {
-  let currentNumber = 1;
-
-  const printCurrentNumber = () => {
-    console.log(currentNumber);
-    currentNumber++;
-
-    if (currentNumber <= 5) {
-      setTimeout(printCurrentNumber, 1000); 
-    }
-  };
-
-  printCurrentNumber();
+const delayedLoop = async () => {
+  for (let i = 1; i <= 5; i++) {
+    console.log(i);
+    await new Promise((resolve) => setTimeout(resolve, 1000)); 
+  }
 };
 
-printNumbers();
+delayedLoop();
+
 
 // ------------------------------------------------------------Random-------------------------------------------
 
