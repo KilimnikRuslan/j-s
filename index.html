@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #clock {
+            font-size: 60px;
+            text-align: center;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: pulse 1s infinite;
+        }
+
+    </style>
 </head>
 <body>
+    <div id="clock">00:00:00</div>
 
-    <script src="./java.js"></script>
+    <script>
+        function updateClock() {
+            const currentTime = new Date();
+            const hours = currentTime.getHours();
+            const minutes = currentTime.getMinutes();
+            const seconds = currentTime.getSeconds();
+
+            const formattedHours = (hours < 10 ? "0" : "") + hours;
+            const formattedMinutes = (minutes < 10 ? "0" : "") + minutes;
+            const formattedSeconds = (seconds < 10 ? "0" : "") + seconds;
+
+            const timeString = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+
+            document.getElementById("clock").innerHTML = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
