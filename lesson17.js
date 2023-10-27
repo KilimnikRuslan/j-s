@@ -32,4 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
         savedTasks.length = 0;
         localStorage.removeItem("tasks");
     });
-});
+})
