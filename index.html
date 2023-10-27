@@ -5,9 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+h1 {
+    margin-left: 225px;
+    font-size: 24px;
+    color: #000000;
+}
+ul#todo-list li {
+    background-color: #f4efefec;
+    width: 550px;
+    padding: 8px;
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+input#task {
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0c55a4; 
+}
+button#clear-list {
+    background-color: #d9534f;
+}
+
+
+button#clear-list:hover {
+    background-color: #95120d;
+}
+</style>
 </head>
 <body>
-
-    <script src="./java.js"></script>
+    <h1>Список завдань</h1>
+    <ul id="todo-list"></ul>
+    <input type="text" id="task" placeholder="Додати завдання">
+    <button id="add-task">Додати</button>
+    <button id="clear-list">Очистити список</button>
+    <script src="./lesson17.js"></script>
 </body>
 </html>
